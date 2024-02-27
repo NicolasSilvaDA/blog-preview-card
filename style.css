@@ -1,0 +1,128 @@
+:root {
+    /* Primary colors */
+    --primary-yellow: hsl(47, 88%, 63%);
+    
+    /* Neutral colors */
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 50%);
+    --black: hsl(0, 0%, 7%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-yellow);
+    font-family: 'Figtree', 'sans-serif';
+    font-size: 16px;
+    overflow: hidden;
+
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        transform: translateY(33%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+section {
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 350px;
+    height: fit-content;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 16px;
+    box-shadow: 8px 8px var(--black);
+}
+
+div#concept-art { 
+    width: 100%;
+    height: 200px;
+    background-image: url(images/illustration-article.svg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+div#tag {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--primary-yellow);
+    padding: 5px 10px;
+    margin: 24px 0 16px 0;
+    border-radius: 5px;
+}
+
+div#tag p {
+    font-weight: 800;
+}
+
+legend {
+    font-weight: 500;
+}
+
+h1 {
+    margin: 24px 0;
+    font-weight: 800;
+}
+
+h1:hover {
+    color: var(--primary-yellow);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+h1:active {
+    color: var(--black);
+}
+
+p#section-info {
+    color: var(--grey);
+}
+
+div#author {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+div#prof-photo {
+    width: 32px;
+    height: 32px;
+    background-image: url('images/Profile-photo.jpg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+p#author-name {
+    color: var(--black);
+    font-weight: 800;
+    margin-left: 12px;
+}
+
+@media screen and (max-width:600px) {
+    body {
+        width: 100%;
+    }
+
+    section {
+        margin: 0 20px;
+    }
+}
